@@ -27,5 +27,21 @@
   .b
     %img.c{:src => "assets/logo.png"}/
 .main-box
-  .main-top
-  
+  .main-bottom
+    .main-top
+      .main-title
+        %h1
+          いきつけレビューアー満足度ランキング
+        %a.itiran{:href => "#"} 一覧をみる
+      .main-index
+        .index-page
+          %li.index-item
+            .item-page
+              .item-out
+                .item-rank
+                  %b １
+                  位
+                %a.image
+                = image_tag (image_url 'favicon.png'),class:"image1"
+                .image-title
+                  一蘭
