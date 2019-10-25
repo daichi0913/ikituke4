@@ -1,7 +1,15 @@
-.top-header
+.header__bar.row
+  - if user_signed_in?
+    .user_nav.grid-6
+      = link_to "ログアウト", destroy_user_session_path, method: :delete
+      %a.post{:href => "/posts/new"} 投稿する
+  - else
+    .grid-6
+      = link_to "ログイン", new_user_session_path, class: 'post'
+      = link_to "新規登録", new_user_registration_path, class: 'post'
   .header-bottom
   = image_tag (image_url 'favicon.png'), class: "header-bottom2"
-  .header-left
+  .header-left   
     検索
   .header-right
     ランキング
@@ -28,20 +36,528 @@
     %img.c{:src => "assets/logo.png"}/
 .main-box
   .main-bottom
-    .main-top
-      .main-title
-        %h1
-          いきつけレビューアー満足度ランキング
-        %a.itiran{:href => "#"} 一覧をみる
-      .main-index
-        .index-page
-          %li.index-item
-            .item-page
-              .item-out
-                .item-rank
-                  %b １
-                  位
-                %a.image
-                = image_tag (image_url 'favicon.png'),class:"image1"
-                .image-title
-                  一蘭
+    .main-main-box
+      .main-top
+        .main-title
+          %h1
+            いきつけレビューアー満足度ランキング
+          %a.itiran{:href => "#"} 一覧をみる
+        .main-index
+          .index-page
+            %li.index-item
+              .item-page
+                .item-out
+                  .item-rank
+                    %b １
+                    位
+                  %a.image
+                  = image_tag (image_url 'favicon.png'),class:"image1"
+                  .image-title
+                    一蘭
+                  .image-iine
+                    .iine-bottom
+                      みた
+                    .iine-bottom-1
+                      みない
+            %li.index-item
+              .item-page
+                .item-out
+                  .item-rank
+                    %b １
+                    位
+                  %a.image
+                  = image_tag (image_url 'favicon.png'),class:"image1"
+                  .image-title
+                    一蘭
+                  .image-iine
+                    .iine-bottom
+                      みた
+                    .iine-bottom-1
+                      みない
+            %li.index-item
+              .item-page
+                .item-out
+                  .item-rank
+                    %b １
+                    位
+                  %a.image
+                  = image_tag (image_url 'favicon.png'),class:"image1"
+                  .image-title
+                    一蘭
+                  .image-iine
+                    .iine-bottom
+                      みた
+                    .iine-bottom-1
+                      みない
+            %li.index-item
+              .item-page
+                .item-out
+                  .item-rank
+                    %b １
+                    位
+                  %a.image
+                  = image_tag (image_url 'favicon.png'),class:"image1"
+                  .image-title
+                    一蘭
+                  .image-iine
+                    .iine-bottom
+                      みた
+                    .iine-bottom-1
+                      みない
+            %li.index-item
+              .item-page
+                .item-out
+                  .item-rank
+                    %b １
+                    位
+                  %a.image
+                  = image_tag (image_url 'favicon.png'),class:"image1"
+                  .image-title
+                    一蘭
+                  .image-iine
+                    .iine-bottom
+                      みた
+                    .iine-bottom-1
+                      みない
+          .comment
+            .comment-page
+            = link_to "コメントする", "#", class: 'btn-comment',style: 'display:inline-block; transition: .5s;'
+      .main-top
+        =fa_icon "clock-o"      
+        .main-title
+          %h1
+            新作　ツイート数ランキング
+          %a.itiran{:href => "#"} 一覧をみる
+        .title-index
+          %h3
+            直近24時間のツイート件数
+        .main-index
+          .index-page
+            %li.index-item
+              .item-page
+                .item-out
+                  .item-rank
+                    %b １
+                    位
+                  %a.image
+                  = image_tag (image_url 'favicon.png'),class:"image1"
+                  .image-title
+                    一蘭
+                  .image-iine
+                    .iine-bottom
+                      みた
+                    .iine-bottom-1
+                      みない
+            %li.index-item
+              .item-page
+                .item-out
+                  .item-rank
+                    %b １
+                    位
+                  %a.image
+                  = image_tag (image_url 'favicon.png'),class:"image1"
+                  .image-title
+                    一蘭
+                  .image-iine
+                    .iine-bottom
+                      みた
+                    .iine-bottom-1
+                      みない
+            %li.index-item
+              .item-page
+                .item-out
+                  .item-rank
+                    %b １
+                    位
+                  %a.image
+                  = image_tag (image_url 'favicon.png'),class:"image1"
+                  .image-title
+                    一蘭
+                  .image-iine
+                    .iine-bottom
+                      みた
+                    .iine-bottom-1
+                      みない
+            %li.index-item
+              .item-page
+                .item-out
+                  .item-rank
+                    %b １
+                    位
+                  %a.image
+                  = image_tag (image_url 'favicon.png'),class:"image1"
+                  .image-title
+                    一蘭
+                  .image-iine
+                    .iine-bottom
+                      みた
+                    .iine-bottom-1
+                      みない
+            %li.index-item
+              .item-page
+                .item-out
+                  .item-rank
+                    %b １
+                    位
+                  %a.image
+                  = image_tag (image_url 'favicon.png'),class:"image1"
+                  .image-title
+                    一蘭
+                  .image-iine
+                    .iine-bottom
+                      みた
+                    .iine-bottom-1
+                      みない
+            .main-index
+          .index-page
+            %li.index-item
+              .item-page
+                .item-out
+                  .item-rank
+                    %b １
+                    位
+                  %a.image
+                  = image_tag (image_url 'favicon.png'),class:"image1"
+                  .image-title
+                    一蘭
+                  .image-iine
+                    .iine-bottom
+                      みた
+                    .iine-bottom-1
+                      みない
+            %li.index-item
+              .item-page
+                .item-out
+                  .item-rank
+                    %b １
+                    位
+                  %a.image
+                  = image_tag (image_url 'favicon.png'),class:"image1"
+                  .image-title
+                    一蘭
+                  .image-iine
+                    .iine-bottom
+                      みた
+                    .iine-bottom-1
+                      みない
+            %li.index-item
+              .item-page
+                .item-out
+                  .item-rank
+                    %b １
+                    位
+                  %a.image
+                  = image_tag (image_url 'favicon.png'),class:"image1"
+                  .image-title
+                    一蘭
+                  .image-iine
+                    .iine-bottom
+                      みた
+                    .iine-bottom-1
+                      みない
+            %li.index-item
+              .item-page
+                .item-out
+                  .item-rank
+                    %b １
+                    位
+                  %a.image
+                  = image_tag (image_url 'favicon.png'),class:"image1"
+                  .image-title
+                    一蘭
+                  .image-iine
+                    .iine-bottom
+                      みた
+                    .iine-bottom-1
+                      みない
+            %li.index-item
+              .item-page
+                .item-out
+                  .item-rank
+                    %b １
+                    位
+                  %a.image
+                  = image_tag (image_url 'favicon.png'),class:"image1"
+                  .image-title
+                    一蘭
+                  .image-iine
+                    .iine-bottom
+                      みた
+                    .iine-bottom-1
+                      みない
+        .more-page
+        = link_to "一覧をみる", "#", class: "more-show"
+      .main-top
+        =fa_icon "clock-o"      
+        .main-title
+          %h1
+            グルメ特集
+          %a.itiran{:href => "#"} 一覧をみる
+        .title-index
+          %h3
+            直近24時間のツイート件数
+        .main-index
+          .index-page
+            %li.index-item
+              .item-page
+                .item-out
+                  .item-rank
+                    %b １
+                    位
+                  %a.image
+                  = image_tag (image_url 'favicon.png'),class:"image1"
+                  .image-title
+                    一蘭
+                  .image-iine
+                    .iine-bottom
+                      みた
+                    .iine-bottom-1
+                      みない
+            %li.index-item
+              .item-page
+                .item-out
+                  .item-rank
+                    %b １
+                    位
+                  %a.image
+                  = image_tag (image_url 'favicon.png'),class:"image1"
+                  .image-title
+                    一蘭
+                  .image-iine
+                    .iine-bottom
+                      みた
+                    .iine-bottom-1
+                      みない
+            %li.index-item
+              .item-page
+                .item-out
+                  .item-rank
+                    %b １
+                    位
+                  %a.image
+                  = image_tag (image_url 'favicon.png'),class:"image1"
+                  .image-title
+                    一蘭
+                  .image-iine
+                    .iine-bottom
+                      みた
+                    .iine-bottom-1
+                      みない
+            %li.index-item
+              .item-page
+                .item-out
+                  .item-rank
+                    %b １
+                    位
+                  %a.image
+                  = image_tag (image_url 'favicon.png'),class:"image1"
+                  .image-title
+                    一蘭
+                  .image-iine
+                    .iine-bottom
+                      みた
+                    .iine-bottom-1
+                      みない
+            %li.index-item
+              .item-page
+                .item-out
+                  .item-rank
+                    %b １
+                    位
+                  %a.image
+                  = image_tag (image_url 'favicon.png'),class:"image1"
+                  .image-title
+                    一蘭
+                  .image-iine
+                    .iine-bottom
+                      みた
+                    .iine-bottom-1
+                      みない
+            .main-index
+          .index-page
+            %li.index-item
+              .item-page
+                .item-out
+                  .item-rank
+                    %b １
+                    位
+                  %a.image
+                  = image_tag (image_url 'favicon.png'),class:"image1"
+                  .image-title
+                    一蘭
+                  .image-iine
+                    .iine-bottom
+                      みた
+                    .iine-bottom-1
+                      みない
+            %li.index-item
+              .item-page
+                .item-out
+                  .item-rank
+                    %b １
+                    位
+                  %a.image
+                  = image_tag (image_url 'favicon.png'),class:"image1"
+                  .image-title
+                    一蘭
+                  .image-iine
+                    .iine-bottom
+                      みた
+                    .iine-bottom-1
+                      みない
+            %li.index-item
+              .item-page
+                .item-out
+                  .item-rank
+                    %b １
+                    位
+                  %a.image
+                  = image_tag (image_url 'favicon.png'),class:"image1"
+                  .image-title
+                    一蘭
+                  .image-iine
+                    .iine-bottom
+                      みた
+                    .iine-bottom-1
+                      みない
+            %li.index-item
+              .item-page
+                .item-out
+                  .item-rank
+                    %b １
+                    位
+                  %a.image
+                  = image_tag (image_url 'favicon.png'),class:"image1"
+                  .image-title
+                    一蘭
+                  .image-iine
+                    .iine-bottom
+                      みた
+                    .iine-bottom-1
+                      みない
+            %li.index-item
+              .item-page
+                .item-out
+                  .item-rank
+                    %b １
+                    位
+                  %a.image
+                  = image_tag (image_url 'favicon.png'),class:"image1"
+                  .image-title
+                    一蘭
+                  .image-iine
+                    .iine-bottom
+                      みた
+                    .iine-bottom-1
+                      みない
+    .main-right
+      .right-advertisement
+        広告
+      .right-rank
+        .right-rank-top
+          今月のオススメ
+        %ul.right-rank-main
+          %li-1
+            .right-rank-top
+              11月
+            .right-math
+              .math-rank
+                = image_tag (image_url 'favicon.png'),class:"math-rank"
+                .math-right
+                  = link_to "ずんどう屋", "#", class:"link-name"
+          %li-2
+            .right-math
+              .math-rank
+                = image_tag (image_url 'favicon.png'),class:"math-rank"
+                .math-right
+                  = link_to "ずんどう屋", "#", class:"link-name"
+          %li-2
+            .right-math
+              .math-rank
+                = image_tag (image_url 'favicon.png'),class:"math-rank"
+                .math-right
+                  = link_to "ずんどう屋", "#", class:"link-name"
+          %li-2
+            .right-math
+              .math-rank
+                = image_tag (image_url 'favicon.png'),class:"math-rank"
+                .math-right
+                  = link_to "ずんどう屋", "#", class:"link-name"
+          %li-2
+            .right-math
+              .math-rank
+                = image_tag (image_url 'favicon.png'),class:"math-rank"
+                .math-right
+                  = link_to "ずんどう屋", "#", class:"link-name"
+      .right-rank
+        .right-rank-top
+          今月のオススメ
+        %ul.right-rank-main
+          %li-1
+            .right-rank-top
+              11月
+            .right-math
+              .math-rank
+                = image_tag (image_url 'favicon.png'),class:"math-rank"
+                .math-right
+                  = link_to "ずんどう屋", "#", class:"link-name"
+          %li-2
+            .right-math
+              .math-rank
+                = image_tag (image_url 'favicon.png'),class:"math-rank"
+                .math-right
+                  = link_to "ずんどう屋", "#", class:"link-name"
+          %li-2
+            .right-math
+              .math-rank
+                = image_tag (image_url 'favicon.png'),class:"math-rank"
+                .math-right
+                  = link_to "ずんどう屋", "#", class:"link-name"
+          %li-2
+            .right-math
+              .math-rank
+                = image_tag (image_url 'favicon.png'),class:"math-rank"
+                .math-right
+                  = link_to "ずんどう屋", "#", class:"link-name"
+          %li-2
+            .right-math
+              .math-rank
+                = image_tag (image_url 'favicon.png'),class:"math-rank"
+                .math-right
+                  = link_to "ずんどう屋", "#", class:"link-name"
+      .right-rank
+        .right-rank-top
+          今月のオススメ
+        %ul.right-rank-main
+          %li-1
+            .right-rank-top
+              11月
+            .right-math
+              .math-rank
+                = image_tag (image_url 'favicon.png'),class:"math-rank"
+                .math-right
+                  = link_to "ずんどう屋", "#", class:"link-name"
+          %li-2
+            .right-math
+              .math-rank
+                = image_tag (image_url 'favicon.png'),class:"math-rank"
+                .math-right
+                  = link_to "ずんどう屋", "#", class:"link-name"
+          %li-2
+            .right-math
+              .math-rank
+                = image_tag (image_url 'favicon.png'),class:"math-rank"
+                .math-right
+                  = link_to "ずんどう屋", "#", class:"link-name"
+          %li-2
+            .right-math
+              .math-rank
+                = image_tag (image_url 'favicon.png'),class:"math-rank"
+                .math-right
+                  = link_to "ずんどう屋", "#", class:"link-name"
+          %li-2
+            .right-math
+              .math-rank
+                = image_tag (image_url 'favicon.png'),class:"math-rank"
+                .math-right
+                  = link_to "ずんどう屋", "#", class:"link-name"
