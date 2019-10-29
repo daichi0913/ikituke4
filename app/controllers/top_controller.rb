@@ -20,5 +20,10 @@ class TopController < ApplicationController
   def manji
     redirect_to action: :index unless user_signed_in?
   end
+
+  def users_tweets
+    @user = User.find(params[:id])
+    @tweets = Tweet.where(user_id: @user.id).all.order("created_at DESC").page(params[:page]).per(20)
+  end
 end
 

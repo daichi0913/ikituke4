@@ -1,0 +1,25 @@
+%h2 投稿
+.contents.row
+  -# .name3
+  -#   投稿者:#{link_to @tweet.user, user_path(@tweet.user), method: :get}
+  .name2
+    投稿日時:#{@tweet.created_at.strftime("%Y-%m-%d %H:%M:%S")}
+  - if user_signed_in? && current_user.id == @tweet.user
+    .name2
+      = link_to '編集', edit_tweet_path(@tweet), method: :get
+    .name2
+      = link_to '削除', "/tweets/#{@tweet.id}", method: :delete
+  .name3= simple_format(@tweet.text)
+.contents.row
+  %h2 コメント一覧
+  - if @comments
+    - @comments.each do |comment|
+      .name2
+        -# 投稿者:#{link_to comment.user.username, "/users/#{comment.user_id}"}  投稿日時:#{comment.created_at.strftime("%Y-%m-%d %H:%M:%S")}
+      .name2= comment.text
+  %br/
+  - if current_user
+    = form_tag("/tweets/#{@tweet.id}/comments", method: :post) do
+      %textarea{:cols => "30", :name => "text", :placeholder => "コメントする", :rows => "2"}
+      %br/
+      %input{:type => "submit", :value => "コメントの投稿"}/

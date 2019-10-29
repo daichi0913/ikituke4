@@ -2,10 +2,10 @@ class CreateTweets < ActiveRecord::Migration[5.2]
   def change
     create_table :tweets do |t|
 
-      t.timestamps
       t.text :text
       t.text :image
-      t.timestamps
+      t.references :user,            null: false, froeign_key: true
+      t.timestamps null: false
     end
   end
 end
