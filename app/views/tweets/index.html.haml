@@ -4,7 +4,7 @@
 - @tweets.each do |tweet|
   .contents.row
     .name3
-      -# 投稿者:#{link_to tweet.user.username, user_path(tweet.user), method: :get}
+      投稿者:#{link_to tweet.user.name, new_tweet_path(tweet.user), method: :get}
     .name2
       投稿日時:#{tweet.created_at.strftime("%Y-%m-%d %H:%M:%S")}
     .name2= link_to '詳細', tweet_path(tweet), method: :get

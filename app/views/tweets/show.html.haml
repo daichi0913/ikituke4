@@ -1,7 +1,7 @@
 %h2 投稿
 .contents.row
-  -# .name3
-  -#   投稿者:#{link_to @tweet.user, user_path(@tweet.user), method: :get}
+  .name3
+    -# 投稿者:#{link_to @tweet.user, user_path(@tweet.user), method: :get}
   .name2
     投稿日時:#{@tweet.created_at.strftime("%Y-%m-%d %H:%M:%S")}
   - if user_signed_in? && current_user.id == @tweet.user
@@ -15,7 +15,7 @@
   - if @comments
     - @comments.each do |comment|
       .name2
-        -# 投稿者:#{link_to comment.user.username, "/users/#{comment.user_id}"}  投稿日時:#{comment.created_at.strftime("%Y-%m-%d %H:%M:%S")}
+        投稿者:#{link_to comment.user.name, "/users/#{comment.user_id}"}  投稿日時:#{comment.created_at.strftime("%Y-%m-%d %H:%M:%S")}
       .name2= comment.text
   %br/
   - if current_user

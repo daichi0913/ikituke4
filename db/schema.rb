@@ -25,8 +25,10 @@ ActiveRecord::Schema.define(version: 2019_10_25_074552) do
     t.text "text"
     t.text "image"
     t.bigint "user_id", null: false
+    t.bigint "name_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["name_id"], name: "index_tweets_on_name_id"
     t.index ["user_id"], name: "index_tweets_on_user_id"
   end
 
